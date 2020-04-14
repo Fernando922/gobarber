@@ -26,6 +26,11 @@ class User extends Model {
     return this;
   }
 
+  // para o sequelize entender que tem relacionamento com outra tabela
+  static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
+  }
+
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }

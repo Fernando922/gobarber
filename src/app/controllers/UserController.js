@@ -52,7 +52,7 @@ class UserController {
 
     const user = await User.findByPk(req.userId); // userId veio do middleware
 
-    if (email !== user.email) {
+    if (email && email !== user.email) {
       const userExists = await User.findOne({ where: { email } });
 
       if (userExists) {
