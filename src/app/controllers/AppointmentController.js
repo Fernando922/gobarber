@@ -41,8 +41,6 @@ class AppointmentController {
       },
     });
 
-    console.log(checkAvailability)
-
     if (checkAvailability) {
       return res
         .status(400)

@@ -15,21 +15,30 @@
     "yup": "^0.28.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "cz-conventional-changelog": "3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.5",
     "prettier": "^2.0.2",
     "sequelize-cli": "^5.5.1",
     "sucrase": "^3.13.0"
   },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "lint": "eslint --fix src --ext .js",
+    "lint": "eslint ./src",
     "dropDatabase": "yarn sequelize db:migrate:undo:all",
     "migrations": "yarn sequelize db:migrate",
     "seeds": "yarn sequelize db:seed:all",
     "reset": "yarn dropDatabase && yarn migrations && yarn seeds && yarn dev"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
