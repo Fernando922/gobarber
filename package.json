@@ -26,6 +26,9 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "lint": "eslint --fix src --ext .js",
-    "reset": "yarn sequelize db:migrate:undo:all && yarn sequelize db:migrate && yarn dev"
+    "dropDatabase": "yarn sequelize db:migrate:undo:all",
+    "migrations": "yarn sequelize db:migrate",
+    "seeds": "yarn sequelize db:seed:all",
+    "reset":  "yarn dropDatabase && yarn migrations && yarn seeds && yarn dev"
   }
 }

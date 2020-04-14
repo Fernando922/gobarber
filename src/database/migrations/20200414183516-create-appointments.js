@@ -18,7 +18,7 @@ module.exports = {
         references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE', // se alterar o usuario, altera aqui tb
         onDelete: 'SET NULL', // se deletar o usuario vinculado, o campo passa a ser null
-        allowNull: false,
+        allowNull: true,
       },
 
       provider_id: {
@@ -26,18 +26,13 @@ module.exports = {
         references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
 
       canceled_at: {
         type: Sequelize.DATE,
       },
-
-      path: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true,
-      },
+      
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
