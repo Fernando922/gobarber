@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "date-fns": "^2.12.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
@@ -29,6 +30,6 @@
     "dropDatabase": "yarn sequelize db:migrate:undo:all",
     "migrations": "yarn sequelize db:migrate",
     "seeds": "yarn sequelize db:seed:all",
-    "reset":  "yarn dropDatabase && yarn migrations && yarn seeds && yarn dev"
+    "reset": "yarn dropDatabase && yarn migrations && yarn seeds && yarn dev"
   }
 }
