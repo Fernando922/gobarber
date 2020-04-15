@@ -30,7 +30,7 @@
   },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "lint": "eslint ./src",
+    "lint": "eslint src",
     "dropDatabase": "yarn sequelize db:migrate:undo:all",
     "migrations": "yarn sequelize db:migrate",
     "seeds": "yarn sequelize db:seed:all",

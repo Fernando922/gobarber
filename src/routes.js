@@ -18,6 +18,7 @@ routes.use(authMiddleware); // daqui pra baixo todas vão usar o middleware
 routes.put('/users', UserController.update);
 routes.get('/providers', ProviderControlller.index);
 routes.post('/appointments', AppointmentController.store);
+routes.get('/appointments', AppointmentController.index);
 
 routes.post('/files', upload.single('file'), FileController.store);
 
