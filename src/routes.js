@@ -19,8 +19,11 @@ routes.post('/session', SessionController.store);
 routes.use(authMiddleware); // daqui pra baixo todas vão usar o middleware
 routes.put('/users', UserController.update);
 routes.get('/providers', ProviderControlller.index);
+
 routes.post('/appointments', AppointmentController.store);
 routes.get('/appointments', AppointmentController.index);
+routes.delete('/appointments/:id', AppointmentController.delete);
+
 routes.get('/schedule', ScheduleController.index);
 
 routes.get('/notifications', NotificationController.index);
