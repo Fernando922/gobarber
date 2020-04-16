@@ -29,6 +29,12 @@ class AppointmentController {
         .json({ error: 'You can only create appointments with providers!' });
     }
 
+    if (req.userId === provider_id) {
+      return res
+        .status(401)
+        .json({ error: "You can't make an appointment for you" });
+    }
+
     // parseiso transforma a string em um objeto do tipo data
     const hourStart = startOfHour(parseISO(date));
 
