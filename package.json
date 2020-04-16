@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bee-queue": "^1.2.3",
     "date-fns": "^2.12.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
@@ -34,6 +35,7 @@
   },
   "scripts": {
     "dev": "nodemon src/server.js",
+    "queue": "nodemon src/queue.js",
     "lint": "eslint src",
     "dropDatabase": "yarn sequelize db:migrate:undo:all",
     "migrations": "yarn sequelize db:migrate",
