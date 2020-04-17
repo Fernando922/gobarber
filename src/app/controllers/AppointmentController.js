@@ -84,7 +84,7 @@ class AppointmentController {
     const content = await Appointment.findAll({
       where: { user_id: req.userId, canceled_at: null },
       order: ['date'],
-      attributes: ['id', 'date'],
+      attributes: ['id', 'date', 'past', 'cancelable'],
       limit: perPage,
       offset: (page - 1) * perPage,
       include: [
