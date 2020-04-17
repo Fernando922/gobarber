@@ -1,5 +1,6 @@
 // docker run --name redisbarber -p:6379:6379 -d -t redis:alpine necessário banco redis
 // todos os trabalhos que ficam dentro de filas são chamados de jobs
+import 'dotenv/config';
 import Bee from 'bee-queue';
 import CancellationMail from '../app/jobs/CancellationMail';
 import redisConfig from '../config/redis';
